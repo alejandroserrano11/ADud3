@@ -4,9 +4,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     private static ManagerAlumno managerAlumno;
     private static ManagerPrincipal managerPrincipal;
     public static void main(String[] args) {
+
+        // configuro el entorno llamando a setUp de ManagerPrincipal
+        // llamo a menuPpal para mostrar las opciones
+        // cierro el entorno llamando a exit de ManagerPrincipal
+
         managerPrincipal = new ManagerPrincipal();
         managerPrincipal.setUp();
         managerAlumno = new ManagerAlumno();
@@ -15,6 +21,8 @@ public class Main {
 
         managerPrincipal.exit();
     }
+
+    // método menuPpal para mostrar las opciones del menú
 
     private static void menuPpal() {
 
@@ -53,6 +61,8 @@ public class Main {
 
     }
 
+    // método menuCrear para insertar un alumno
+
     private static void menuCrear(Scanner teclado) {
         System.out.println();
         System.out.println("***   MENU INSERTAR ALUMNO   ***");
@@ -78,6 +88,8 @@ public class Main {
         System.out.println();
     }
 
+    // método menuLeer para solicitar un ID y mostrar los datos del alumno
+
     private static void menuLeer(Scanner teclado) {
         System.out.println();
         System.out.println("***   MENU LEER ALUMNO   ***");
@@ -89,6 +101,8 @@ public class Main {
         System.out.println(managerAlumno.leer(id));
         System.out.println();
     }
+
+    // método menuActualizar para actualizar los datos de un alumno
 
     private static void menuActualizar(Scanner teclado) {
         System.out.println();
@@ -137,6 +151,8 @@ public class Main {
 
     }
 
+    // método menuBorrar para borrar un alumno
+
     private static void menuBorrar(Scanner teclado) {
         System.out.println();
         System.out.println("***   MENU BORRAR ALUMNO   ***");
@@ -149,6 +165,8 @@ public class Main {
         System.out.println();
     }
 
+    // método menuLeerTodos para mostrar todos los alumnos
+
     public static void menuLeerTodos(Scanner teclado) {
         System.out.println();
         List<Alumno> listado = managerAlumno.leerTodos();
@@ -157,6 +175,8 @@ public class Main {
         }
         System.out.println();
     }
+
+    // método mostrarOpcionesPpal para mostrar las opciones del menú
 
     private static void mostrarOpcionesPpal() {
         System.out.println();

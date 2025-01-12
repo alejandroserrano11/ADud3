@@ -9,7 +9,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "alumno")
+
 public class Alumno {
+
+    // Atributos
 
     @Id
     @Column(name = "id_alumno")
@@ -22,6 +25,8 @@ public class Alumno {
     private int edad;
     private int num_asignaturas;
 
+    // Constructor
+
     public Alumno() {
         
     }
@@ -32,7 +37,9 @@ public class Alumno {
         this.curso = curso;
         this.edad = edad;
         this.num_asignaturas = num_asignaturas;
-    }   
+    }
+    
+    // Getters y Setters
 
     public int getId_alumno() {
         return id_alumno;
@@ -77,6 +84,8 @@ public class Alumno {
     public void setNum_asignaturas(int num_asignaturas) {
         this.num_asignaturas = num_asignaturas;
     }
+
+    // toString
 
     @Override
     public String toString() {

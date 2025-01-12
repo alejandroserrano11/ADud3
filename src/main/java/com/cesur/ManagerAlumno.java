@@ -7,6 +7,7 @@ import org.hibernate.Session;
 public class ManagerAlumno {
     // CRUD
 
+    // metodo crear
     public void crear(String nombre, String apellidos, String curso, int edad, int num_asignaturas) {
         Alumno nuevoAlumno = new Alumno(nombre, apellidos, curso, edad, num_asignaturas);
         nuevoAlumno.setNombre(nombre);
@@ -23,6 +24,8 @@ public class ManagerAlumno {
         session.close();
     }
 
+    // metodo leer
+
     public Alumno leer(int id_alumno) {
         Session session = null;
         try {
@@ -34,6 +37,8 @@ public class ManagerAlumno {
         }
 
     }
+
+    // metodo actualizar
 
     public void actualizar(int id_alumno, String nombre, String apellidos, String curso, Integer edad, Integer num_asignaturas) {
         Session session = ManagerPrincipal.sessionFactory.openSession();
@@ -50,6 +55,8 @@ public class ManagerAlumno {
         session.getTransaction().commit();
         session.close();
     }
+
+    // metodo borrar
 
     public void borrar(int id_alumno) {
         Session session = ManagerPrincipal.sessionFactory.openSession();
